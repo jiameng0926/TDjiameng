@@ -25,6 +25,7 @@ public class UserController {
         list.add("萌萌萌");
         list.add("郑佳蒙");
         list.add("撒打算");
+        System.out.println("");
         Map map = new HashMap();
         for (String s : list) {
             if(!map.containsKey(s)){
