@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.petrochina.dzxs.server.common.sms.dao.test.TestMapper">
-
+<mapper namespace="com.jm.server.mapper.TestMapper">
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.petrochina.dzxs.server.common.sms.model.test.Test">
+    <resultMap id="BaseResultMap" type="com.jm.server.model.Test">
         <result column="id" property="id" />
         <result column="company_type" property="companyType" />
         <result column="parent_id" property="parentId" />

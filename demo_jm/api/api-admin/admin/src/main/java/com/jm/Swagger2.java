@@ -23,7 +23,7 @@ public class Swagger2 {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("springboot利用swagger构建api文档")
+                .title("郑佳蒙")
                 .description("郑佳蒙demo")
                 .termsOfServiceUrl("jiameng0926@163.com")
                 .version("1.0")

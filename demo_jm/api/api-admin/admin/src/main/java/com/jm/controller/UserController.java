@@ -1,8 +1,11 @@
 package com.jm.controller;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.jm.server.model.Test;
+import com.jm.server.service.ITestService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +19,9 @@ import java.util.Map;
 @RestController
 @Api(description = "活动管理")
 public class UserController {
+    @Autowired
+    private ITestService testServiceImpl;
+
     @RequestMapping(value = "login",method = RequestMethod.GET)
     @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
     public Map login(){
@@ -34,5 +40,16 @@ public class UserController {
             }
         }
         return map;
+    }
+    @RequestMapping(value = "findAll",method = RequestMethod.POST)
+    @ApiOperation(value="查询信息", notes="查询信息")
+    public List<Test> findAll(){
+        List<Test> list = testServiceImpl.selectList(new EntityWrapper());
+        return list;
+    }
+    @RequestMapping(value = "detail",method = RequestMethod.POST)
+    @ApiOperation(value="获取详细信息", notes="获取详细信息")
+    public Test detail(String id){
+        return testServiceImpl.selectOne(id);
     }
 }
